@@ -1,0 +1,472 @@
+:root{
+    --Moderatecyan: #3cb4ac;
+    --Darkcyan: rgb(20, 123, 116);
+    --Black: rgb(0, 0, 0);
+    --Darkgray: rgb(122, 122, 122);
+}
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 400vh;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 1rem;
+    position: relative;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.backerTab{
+    z-index: 3;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,-10%);
+    width: 80vw;
+    height: 250vh; 
+    border-radius: 10px;
+    background-color: white;
+}
+/* gave backernav and text 5vh and content 180vh */
+.backerTab>div{
+    padding: 0.7rem;
+}
+.backerNav{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.backerNav div:first-child{
+    font-weight: 600;
+}
+.backerNav div:last-child{
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.backerTxt{
+    flex: 1;
+    color: var(--Darkgray);
+}
+.backer_content{
+    width: 100%;
+    flex: 48;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.B1, .B2, .B3, .B4{
+    margin-bottom: 1.5rem;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    align-items: flex-start;
+    border-radius: 10px;
+    border: 1px solid var(--Moderatecyan);
+}
+.B1_D1,.B2_D1,.B3_D1,.B4_D1{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex: 1;
+    border-bottom: 1px solid var(--Darkgray);
+}
+.tabTitle div{
+    font-weight: 700;
+}
+.tabTitle div:last-child{
+    color: var(--Moderatecyan);
+}
+.tabTxt{
+    color: var(--Darkgray);
+}
+.tabCount{
+    margin: 1rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.tabNo{
+    margin-right: 0.2rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.B1_D2,.B2_D2,.B3_D2,.B4_D2{
+    flex: 0.5;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabContent, .tab_Btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tabContent{
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+}
+.tab_Btn:nth-child(1){
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+.tab_Btn:nth-child(2){
+    font-weight: 600;
+    height: 100%;
+    width: 50%;
+    color: #f5f5f5;
+    background-color: var(--Moderatecyan);
+    border-radius: 10px;
+}
+.B4{
+    opacity: 0.6;
+}
+.thankTab{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 80%;
+    height: 12%;
+    border-radius: 10px;
+    padding: 10px;
+    transform: translate(-50%,-5%);
+    background-color: #ffffff;
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.T2{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.T3{
+    color: var(--Darkgray);
+}
+.T4{
+    color: #ffffff;
+    background-color: var(--Moderatecyan);
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 10px;
+    height: 20%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    flex: 1;
+    background-image: url(./images/image-hero-mobile.jpg);
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 1rem;
+}
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navBar .navLogo, .navBar #ham_Cls_Btn{
+    margin: 10px 15px;
+}
+#ham_Cls_Btn{
+    cursor: pointer;
+}
+.navBar .navItem{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,-10%);
+    width: 80%;
+    height: 25%;
+    z-index: 2;
+}
+.navItem .navBtn{
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 15px;
+    align-items: center;
+    width: 100%;
+    background-color: whitesmoke;
+    flex: 1;
+    font-weight: 550;
+    cursor: pointer;
+}
+.navItem .navBtn:first-child{
+    border-bottom: 1px solid gray;
+}
+.navItem .navBtn:last-child{
+    border-top: 1px solid gray;
+}
+.navItem .navBtn:hover{
+    color: whitesmoke;
+    background-color: var(--Moderatecyan);
+}
+
+main{
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+main > div{
+    margin-bottom: 1.5rem;
+    width: 80%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 15px;
+}
+.D1 , .D2 ,.D3{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+.D1 > div{
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+.D1 .D1_S1{
+    position: absolute;
+    top: -2.5rem;
+}
+.D1 .D1_S2{
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+.D1 .D1_S3{
+    padding: 0.5rem;
+    color: var(--Darkgray);
+}
+.D1 .D1_S4{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.D1_S4 div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+}
+.D1_S4 .connectBtn{
+    background-color: var(--Moderatecyan);
+    border-radius: 50px;
+    width: 60%;
+    padding: 0.5rem;
+    color: whitesmoke;
+    font-weight: 600;
+}
+.D2> div{
+    display: flex;
+    padding: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--Darkgray);
+}
+.D2_S1 div:first-child,.D2_S2 div:first-child, .D2_S3 div:first-child{
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+.D2_S1 div:last-child, .D2_S2 div:last-child, .D2_S3 div:last-child{
+    color: var(--Darkgray);
+}
+.D3{
+    flex: 5;
+}
+.D3> div{
+    flex: 1;
+    width: 80%;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.D3> div:not(:first-child){
+    border: 1px solid rgba(122, 122, 122,0.5);
+    border-radius: 0.5rem;
+}
+.D3> div:last-child{
+    opacity: 0.5;
+    margin-bottom: 1.5rem;
+}
+.D3 .D3_S2, .D3 .D3_S3, .D3 .D3_S4{
+    padding-left: 10px;
+}
+.D3_S1 .S1_title{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.D3_S1 .S1_content{
+    color: var(--Darkgray);
+}
+.S_title div:first-child{
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.S_title div:last-child{
+    font-weight: 600;
+    color: var(--Moderatecyan);
+}
+.S_content{
+    color: var(--Darkgray);
+    font-weight: 500;
+}
+.S_count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.S_count div:first-child{
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding-right: 0.5rem;
+}
+.S_Btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Moderatecyan);
+    border-radius: 30px;
+    width: 70%;
+    padding: 10px;
+    color: whitesmoke;
+    font-weight: 550;
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    color: var(--Darkgray);
+}
+
+@media only screen and (min-width: 600px){
+    body{
+        overflow-x:hidden;
+        width: 100vw;
+        height: 350vh;
+    }
+    header{
+        background-image: url(./images/image-hero-desktop.jpg);
+    }
+    .navBar{
+        height: 15%;
+    }
+    .hamBtn{
+        display: none;
+    }
+    .navBar .navItem{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: transparent;
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        position: unset;
+        transform: translate(0,0);
+        width: 50%;
+        height: 100%;
+        z-index: 0;
+    }
+    .navItem .navBtn{
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        padding-left: 0px;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        color: #ffffff;
+        background-color: transparent;
+        flex: 1;
+        font-weight: 550;
+        cursor: pointer;
+    }
+    .navItem .navBtn:first-child{
+        border-bottom: 0px;
+    }
+    .navItem .navBtn:last-child{
+        border-top: 0px;
+    }
+    .navItem .navBtn:hover{
+        color: whitesmoke;
+        background-color: transparent;
+    }
+    main{
+        flex: 6;
+    }
+    main > div{
+        width: 50%;
+    }
+    .D1_S4 .connectBtn{
+        width: 40%;
+    }
+    .D3{
+        flex: 4;
+    }
+    .S_count, .S_Btn{
+        align-self: center;
+    }
+    .backerTab{
+        width: 40%;
+        height: 200vh;
+    }
+    .backer_content{
+        flex: 40;
+    }
+    .thankTab{
+        width: 40%;
+    }
+    .T4{
+        width: 20%;
+    }
+}
